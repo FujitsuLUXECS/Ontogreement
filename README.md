@@ -2,7 +2,7 @@
 # Ontogreement
 
 The Ontogreement ontology.
-The .rdf file can be found [here](Ontogreement.rdf).
+The .rdf file can be found [here](https://github.com/FujitsuLUXECS/Ontogreement/blob/main/Ontogreement.rdf).
 
 ![The Ontogreement ontology](Ontogreement_Visualized.png)
 
