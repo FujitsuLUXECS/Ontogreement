@@ -2,4 +2,4 @@
 
 The Ontogreement ontology.
 
-![The Ontogreement ontology](Ontogreement_visualized.pdf)
+![The Ontogreement ontology](Ontogreement_Visualized.png)
