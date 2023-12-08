@@ -1,0 +1,784 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/Ontogreement#"
+     xml:base="http://www.semanticweb.org/Ontogreement"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:Ontogreement="http://www.semanticweb.org/Ontogreement#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/Ontogreement">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/Ontogreement/1.0.0"/>
+        <dc:description>The Ontogreement ontology models the data sharing agreement (DSA) between a Data Provider and a Data Processor according to the GDPR.</dc:description>
+        <terms:contributor>Moussa Ouedraogo</terms:contributor>
+        <terms:contributor>Sofiane Lagraa</terms:contributor>
+        <terms:contributor>Sven Carsten Rasmusen</terms:contributor>
+        <terms:contributor>Vincent Le</terms:contributor>
+        <terms:license>https://www.apache.org/licenses/LICENSE-2.0.html</terms:license>
+        <owl:versionInfo>Version 1.3.1</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/abstract -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/abstract"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies.atb-bremen.de/smashHitCore#hasStatus -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.atb-bremen.de/smashHitCore#hasStatus">
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#LegalAgreement"/>
+        <rdfs:range rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#ContractStatus"/>
+        <dc:description xml:lang="en">Indicates the current status of a contract.</dc:description>
+        <rdfs:label xml:lang="en">has Status</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#allowedProcess -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Ontogreement#allowedProcess">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Ontogreement#Process"/>
+        <rdfs:label xml:lang="en">allowed process</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#hasData -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Ontogreement#hasData">
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#LegalAgreement"/>
+        <rdfs:range rdf:resource="https://w3id.org/dpv#Data"/>
+        <rdfs:label xml:lang="en">has Data</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#hasPurpose -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Ontogreement#hasPurpose">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:range rdf:resource="https://w3id.org/dpv#Purpose"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#hasRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Ontogreement#hasRole">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Role"/>
+        <rdfs:label xml:lang="en">has Role</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#hasSignature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Ontogreement#hasSignature">
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#LegalAgreement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Ontogreement#Signature"/>
+        <rdfs:label xml:lang="en">has signature</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#hasSigner -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Ontogreement#hasSigner">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Ontogreement#Signature"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Person"/>
+        <rdfs:label xml:lang="en">has signer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#isSignatureOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Ontogreement#isSignatureOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Ontogreement#Signature"/>
+        <rdfs:range rdf:resource="https://w3id.org/dpv#LegalAgreement"/>
+        <rdfs:label xml:lang="en">is signature of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#signed -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Ontogreement#signed">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Organization"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/dpv#LegalAgreement"/>
+        <dc:description xml:lang="en">The act of confirming and agreeing to an agreement between two or more parties mentioned within then signed agreement.</dc:description>
+        <rdfs:label xml:lang="en">signed</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#signedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Ontogreement#signedBy">
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#LegalAgreement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Organization"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Person"/>
+        <dc:description xml:lang="en">Being confirmed and agreed to by a party mentioned in the agreement.</dc:description>
+        <rdfs:label xml:lang="en">signed by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#usedFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Ontogreement#usedFor">
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#LegalAgreement"/>
+        <rdfs:range rdf:resource="https://w3id.org/dpv#Purpose"/>
+        <rdfs:label xml:lang="en">used for</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#actedOnBehalfOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#actedOnBehalfOf">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <dc:description xml:lang="en">Delegation is the assignment of authority and responsibility to an agent (by itself or by another agent) to carry out a specific activity as a delegate or representative, while the agent it acts on behalf of retains some responsibility for the outcome of the delegated work. For example, a student acted on behalf of his supervisor, who acted on behalf of the department chair, who acted on behalf of the university; all those agents are responsible in some way for the activity that took place but we do not say explicitly who bears responsibility and to what degree.</dc:description>
+        <rdfs:label xml:lang="en">acted on behalf of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/dpv#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/dpv#hasLocation">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:range rdf:resource="https://w3id.org/dpv#Location"/>
+        <dc:description xml:lang="en">Indicates information about location.</dc:description>
+        <rdfs:label xml:lang="en">has Location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#category -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Ontogreement#category">
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#Data"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">category</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#collectionMethod -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Ontogreement#collectionMethod">
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#Data"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">collection method</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#country -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Ontogreement#country">
+        <rdfs:domain rdf:resource="https://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">country</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Ontogreement#description">
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#Data"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#email -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Ontogreement#email">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">email</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#endDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Ontogreement#endDate">
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#LegalAgreement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">end date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#firstName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Ontogreement#firstName">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">first name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#format -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Ontogreement#format">
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#Data"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">format</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Ontogreement#id">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Ontogreement#Process"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#Purpose"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:description xml:lang="en">A unique sequence of characters and numbers that form an unique identifier. The unique identifier is associated to a given class.</dc:description>
+        <rdfs:comment xml:lang="en">id</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#lastName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Ontogreement#lastName">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">last name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Ontogreement#name">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Organization"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#password -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Ontogreement#password">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">password</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#startDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Ontogreement#startDate">
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#LegalAgreement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">start date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#status -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Ontogreement#status">
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#Data"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#streetName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Ontogreement#streetName">
+        <rdfs:domain rdf:resource="https://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:description xml:lang="en">Refering to the name of the street for a postal address.</dc:description>
+        <rdfs:label xml:lang="en">street name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#streetNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Ontogreement#streetNumber">
+        <rdfs:domain rdf:resource="https://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:description xml:lang="en">Refers to the street number of a postal address.</dc:description>
+        <rdfs:label xml:lang="en">street number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Ontogreement#title">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#version -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Ontogreement#version">
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#Data"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label xml:lang="en">version</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies.atb-bremen.de/smashHitCore#ContractStatus -->
+
+    <owl:Class rdf:about="http://ontologies.atb-bremen.de/smashHitCore#ContractStatus">
+        <dc:description xml:lang="en">Describes the status of a contract.</dc:description>
+        <rdfs:label xml:lang="en">Contract Status</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.atb-bremen.de/smashHitCore#DataController -->
+
+    <owl:Class rdf:about="http://ontologies.atb-bremen.de/smashHitCore#DataController">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Role"/>
+        <dc:description xml:lang="en">As per Article 4(7) of the GDPR, ‘controller’ means the natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data; where the purposes and means of such processing are determined by Union or Member State law, the controller or the specific criteria for its nomination may be provided for by Union or Member State law;</dc:description>
+        <rdfs:label xml:lang="en">Data Controller</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.atb-bremen.de/smashHitCore#DataProcessor -->
+
+    <owl:Class rdf:about="http://ontologies.atb-bremen.de/smashHitCore#DataProcessor">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Role"/>
+        <dc:description xml:lang="en">As per Article 4(8) of the GDPR,‘processor’ means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller;</dc:description>
+        <rdfs:label xml:lang="en">Data Processor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.atb-bremen.de/smashHitCore#StorageLocation -->
+
+    <owl:Class rdf:about="http://ontologies.atb-bremen.de/smashHitCore#StorageLocation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Location"/>
+        <dc:description xml:lang="en">Technical storage location defined e.g. by a URL</dc:description>
+        <rdfs:label xml:lang="en">Storage Location</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#GDPRAgreement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Ontogreement#GDPRAgreement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalAgreement"/>
+        <dc:description xml:lang="en">A legal agreement that is compliant to the General Data Protection Regulation (GDPR).</dc:description>
+        <rdfs:label xml:lang="en">GDPR Agreement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#Model -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Ontogreement#Model">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Data"/>
+        <dc:description xml:lang="en">An machine learning model.</dc:description>
+        <rdfs:label xml:lang="en">Model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#PersonalDataCategory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Ontogreement#PersonalDataCategory">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label xml:lang="en">Personal Data Category</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Ontogreement#Process">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label xml:lang="en">Process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#Signature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Ontogreement#Signature">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#PersonalData"/>
+        <dc:description xml:lang="en">An eSignature of a Person.</dc:description>
+        <rdfs:label xml:lang="en">Signature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#SupervisoryAuthority -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Ontogreement#SupervisoryAuthority">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Role"/>
+        <rdfs:label xml:lang="en">Supervisory Authority</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#Dataset -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Dataset">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Data"/>
+        <dc:description xml:lang="en">A collection of data, published or curated by a single agent, and available for access or download in one or more representations.</dc:description>
+        <rdfs:label xml:lang="en">Dataset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#Role -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Role">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <dc:description xml:lang="en">A role is the function of a resource or agent with respect to another resource, in the context of resource attribution or resource relationships.</dc:description>
+        <rdfs:label xml:lang="en">Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Agent -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Agent">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <dc:description>An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agnet&apos;s activity.</dc:description>
+        <rdfs:label>Agent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Entity -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Entity">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <dc:description xml:lang="en">An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary.</dc:description>
+        <rdfs:label xml:lang="en">Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Organization -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Organization">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <dc:description xml:lang="en">An organization is a social or legal institution such as a company, society, etc.</dc:description>
+        <rdfs:label xml:lang="en">Organisation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Person -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Person">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <dc:description xml:lang="en">Person agents are people.</dc:description>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#SoftwareAgent -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#SoftwareAgent">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <dc:description xml:lang="en">A software agent is running software.</dc:description>
+        <rdfs:label xml:lang="en">Software Agent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/PostalAddress -->
+
+    <owl:Class rdf:about="https://schema.org/PostalAddress">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Location"/>
+        <dc:description xml:lang="en">The mailing address.</dc:description>
+        <rdfs:label xml:lang="en">Postal Address</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/dpv#AnonymisedData -->
+
+    <owl:Class rdf:about="https://w3id.org/dpv#AnonymisedData">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#NonPersonalData"/>
+        <dc:description xml:lang="en">Personal Data that has been (fully and completely) anonymised so that it is no longer considered Personal Data.</dc:description>
+        <rdfs:label xml:lang="en">Anonymised Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/dpv#Data -->
+
+    <owl:Class rdf:about="https://w3id.org/dpv#Data">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <dc:description xml:lang="en">A broad concept representing &apos;data&apos; or &apos;information&apos;.</dc:description>
+        <rdfs:label xml:lang="en">Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/dpv#LegalAgreement -->
+
+    <owl:Class rdf:about="https://w3id.org/dpv#LegalAgreement">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <dc:description xml:lang="en">A legally binding agreement.</dc:description>
+        <rdfs:label xml:lang="en">LegalAgreement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/dpv#Location -->
+
+    <owl:Class rdf:about="https://w3id.org/dpv#Location">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <dc:description xml:lang="en">A location is a position, site, or area where something is located.</dc:description>
+        <rdfs:label xml:lang="en">Location</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/dpv#Marketing -->
+
+    <owl:Class rdf:about="https://w3id.org/dpv#Marketing">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Purpose"/>
+        <dc:description xml:lang="en">Purposes associated with conducting marketing in relation to organisation or products or services e.g. promoting, selling, and distributing.</dc:description>
+        <rdfs:label xml:lang="en">Marketing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/dpv#NonPersonalData -->
+
+    <owl:Class rdf:about="https://w3id.org/dpv#NonPersonalData">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Data"/>
+        <dc:description xml:lang="en">Data that is not Personal Data.</dc:description>
+        <rdfs:label xml:lang="en">Non-Personal Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/dpv#PersonalData -->
+
+    <owl:Class rdf:about="https://w3id.org/dpv#PersonalData">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Data"/>
+        <dc:description xml:lang="en">Data directly or indirectly associated or related to an individual.</dc:description>
+        <rdfs:label xml:lang="en">Personal Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/dpv#PseudonymisedData -->
+
+    <owl:Class rdf:about="https://w3id.org/dpv#PseudonymisedData">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#PersonalData"/>
+        <dc:description xml:lang="en">Personal Data that has undergone a pseudonymised process or a partial (incomplete) anonymisation process such that it is still considered Personal Data.</dc:description>
+        <rdfs:label xml:lang="en">Pseudonymised Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/dpv#Purpose -->
+
+    <owl:Class rdf:about="https://w3id.org/dpv#Purpose">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <dc:description xml:lang="en">The purpose of processing personal data.</dc:description>
+        <rdfs:label xml:lang="en">Purpose</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/dpv#ResearchAndDevelopment -->
+
+    <owl:Class rdf:about="https://w3id.org/dpv#ResearchAndDevelopment">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Purpose"/>
+        <dc:description xml:lang="en">Purposes associated with conducting research and development for new methods, products, or services.</dc:description>
+        <rdfs:label xml:lang="en">Research and Development</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/dpv#ServiceOptimisation -->
+
+    <owl:Class rdf:about="https://w3id.org/dpv#ServiceOptimisation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Purpose"/>
+        <dc:description xml:lang="en">Purposes associated with optimisation of services or activities.</dc:description>
+        <rdfs:label xml:lang="en">Service Optimisation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#Collexor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Ontogreement#Collexor">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Organization"/>
+        <hasRole rdf:resource="http://www.semanticweb.org/Ontogreement#DataConsumer"/>
+        <signed rdf:resource="http://www.semanticweb.org/Ontogreement#DataSharingAgreement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#DataConsumer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Ontogreement#DataConsumer">
+        <rdf:type rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#DataProcessor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#DataProvider -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Ontogreement#DataProvider">
+        <rdf:type rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#DataController"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#DataSharingAgreement -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Ontogreement#DataSharingAgreement">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Ontogreement#GDPRAgreement"/>
+        <signedBy rdf:resource="http://www.semanticweb.org/Ontogreement#Collexor"/>
+        <signedBy rdf:resource="http://www.semanticweb.org/Ontogreement#Fujitsu"/>
+        <endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-04-26T00:00:00</endDate>
+        <startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-04-20T00:00:00</startDate>
+        <title>Luxembourg Automotive Big Data 2022</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#Fujitsu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Ontogreement#Fujitsu">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Organization"/>
+        <hasRole rdf:resource="http://www.semanticweb.org/Ontogreement#DataProvider"/>
+        <name>Fujitsu Luxembourg</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Ontogreement#SvenRasmusen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Ontogreement#SvenRasmusen">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Person"/>
+        <signed rdf:resource="http://www.semanticweb.org/Ontogreement#DataSharingAgreement"/>
+        <prov:actedOnBehalfOf rdf:resource="http://www.semanticweb.org/Ontogreement#Fujitsu"/>
+        <firstName>Sven</firstName>
+        <lastName>Rasmusen</lastName>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
